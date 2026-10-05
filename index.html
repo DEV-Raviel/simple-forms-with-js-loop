@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <form>
+        <label for="firstName">First Name: </label> 
+        <input type="text" id="firstName"> <br>
+
+        <label for="lastName">Last Name: </label>
+        <input type="text" id="lastName"> <br>
+
+        <label for="age">Age: </label> 
+        <input type="number" id="age"> <br>
+
+        <label for="course">Course: </label>
+        <input type="text" id="course"> <br>
+
+        <label for="favoriteColor">Favorite Color:</label> 
+        <input type="text" id="favoriteColor"> <br>
+
+        <label for="favoriteFood">Favorite Food: </label>
+        <input type="text" id="favoriteFood"> <br>
+
+        <label for = "hobby">Hobby:</label>
+        <input type="text" id ="hobby"> <br> <br>
+
+        <button type = "button" onclick = "checkInfommation()">Submit</button>
+    </form>
+
+    <div id="outputStudent"></div>
+    <script>
+
+        function checkInfommation(){
+            const student={
+                firstName: document.getElementById("firstName").value,
+                lastName: document.getElementById("lastName").value,
+                age: document.getElementById("age").value,
+                course: document.getElementById("course").value,
+                favoriteColor: document.getElementById("favoriteColor").value,
+                favoriteFood: document.getElementById("favoriteFood").value,
+                hobby: document.getElementById("hobby").value,
+            };
+            
+            if (!student.firstName || !student.lastName || !student.age || !student.course || !student.favoriteColor || !student.favoriteFood || !student.hobby) {
+                document.getElementById("outputStudent").innerHTML = "Please fill out all fields before submitting.";
+                return;
+            }
+            
+            document.getElementById("outputStudent").innerHTML = 
+                "First Name: " + student.firstName + "<br>" +
+                "Last Name: " + student.lastName + "<br>" +
+                "Age: " + student.age + "<br>" +
+                "Course: " + student.course + "<br>" +
+                "Favorite Color: " + student.favoriteColor + "<br>" +
+                "Favorite Food: " + student.favoriteFood + "<br>" +
+                "Hobby: " + student.hobby;
+        }
+        
+
+        /*
+        student.firstName ="";
+        student.hobby = "Larping";
+        delete student.age;
+        document.write(student.firstName);
+        document.write("<br>");
+        document.write(student.lastName);
+        document.write("<br>");
+        document.write(student.age);
+        document.write("<br>");
+        document.write(student.course);
+        document.write("<br>");
+        document.write(student.favoriteColor);
+        document.write("<br>");
+        document.write(student.favoriteFood);
+        document.write("<br>");
+        document.write(student.hobby);
+        document.write("<br>");
+        */
+
+        
+    </script>
+</body>
+</html> 
